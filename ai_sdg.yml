@@ -1,0 +1,8 @@
+name: ai_sdg
+channels:
+  - conda-forge
+  - plotly
+dependencies:
+  - python=3.12
+  - pandas=2.2.1
+  - plotly=5.22.0
