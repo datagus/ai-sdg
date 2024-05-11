@@ -231,10 +231,9 @@ dataframe = dataframe[["EID", "duplicates", "also_in_sdg", "Title", "Authors", "
 st.write('Duplicates table:')
 st.write(dataframe)
 
-dataframe_2 = sankey_table(sdg)
+sdf = sankey_table(sdg)
+dataframe_2 = sdf[["source", "value", "target"]]
 dataframe_2["source"] = "sdg " + dataframe_2["source"]
 dataframe_2["target"] = "sdg " + dataframe_2["target"]
 st.write('Sankey diagram values table:')
 st.write(dataframe_2)
-
-
