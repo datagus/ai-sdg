@@ -228,5 +228,13 @@ dataframe = duplicates_by_sdg(sdg)
 dataframe = dataframe[["EID", "duplicates", "also_in_sdg", "Title", "Authors", "Year"]]
 
 # Display DataFrame
-st.write('Generated DataFrame:')
+st.write('Duplicates table:')
 st.write(dataframe)
+
+dataframe_2 = sankey_table(sdg)
+dataframe_2["source"] = "sdg " + data_frame_2["source"]
+dataframe_2["target"] = "sdg " + dataframe_2["target"]
+st.write('Sankey diagram values table:')
+st.write(dataframe_2)
+
+
