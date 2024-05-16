@@ -33,6 +33,7 @@ df_sub = df_sub.sort_values(by=["in_how_many_sdgs_appear?", "EID", "sdg"], ascen
 df_sub= df_sub.reset_index(drop=True)
 
 #function duplicates table for each sdg
+@st.cache_data 
 def duplicates_by_sdg(sdg_number):
     #subselecting the df_sub for the respective sdg
     sdg = df_sub.loc[df_sub["sdg"]==sdg_number,]
@@ -51,6 +52,7 @@ def duplicates_by_sdg(sdg_number):
     return sankey_df
 
 #function sankey table for each sdg
+@st.cache_data 
 def sankey_table(sdg):
     df = duplicates_by_sdg(sdg)
     #sorting the dataframe according to the other present sdgs
