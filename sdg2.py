@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-df_raw = pd.read_csv("test_2.csv", sep=";")
+df_raw = pd.read_csv("may16.csv", sep=";")
 
 #creating the sdg column with a dummy value
 df_raw["sdg"] = 0
@@ -235,5 +235,4 @@ sdf = sankey_table(sdg)
 dataframe_2 = sdf[["source", "value", "target"]]
 dataframe_2["source"] = "sdg " + dataframe_2["source"]
 dataframe_2["target"] = "sdg " + dataframe_2["target"]
-st.write('Sankey diagram values table:')
-st.write(dataframe_2)
+#end
