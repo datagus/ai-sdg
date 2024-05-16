@@ -114,7 +114,7 @@ def sankey_diagram(sdg):
 
 
 #sankey diagram function with overlaps
-
+@st.cache_data 
 def sankey_diagram_overlap():
     
     label = []
