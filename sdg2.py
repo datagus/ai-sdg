@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-df_raw = pd.read_csv("may16.csv", sep=";")
+df_raw = pd.read_csv("may24.csv", sep=";")
 #dropping all NA rows
 df_raw = df_raw.dropna(how='all')
 
