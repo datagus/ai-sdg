@@ -73,6 +73,7 @@ def sankey_table(sdg):
     return sank
 
 #function sankey diagram for each sdg
+@st.cache_data 
 def sankey_diagram(sdg):
     try: 
         df = sankey_table(sdg)
@@ -232,7 +233,8 @@ dataframe = duplicates_by_sdg(sdg)
 dataframe = dataframe[["EID", "duplicates", "also_in_sdg", "Title", "Authors", "Year"]]
 
 # Display DataFrame
-st.write('Duplicates table:')
+st.write(f'---> you have {len(dataframe)} duplicates in total')
+st.write('See the detailed table of duplicates you have:')
 st.write(dataframe)
 
 sdf = sankey_table(sdg)
